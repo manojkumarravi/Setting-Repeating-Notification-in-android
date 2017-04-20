@@ -19,11 +19,11 @@ public class AlarmReceiver extends BroadcastReceiver {
         long when = System.currentTimeMillis();
         int id = 0;
         NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent notin = new Intent(context, SuC.class);
+        Intent notin = new Intent(context, SuC.class); \\your class to move on clicking notification(SuC)
         notin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent p2 = PendingIntent.getActivity(context, 0, notin, PendingIntent.FLAG_UPDATE_CURRENT);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder mnb = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.s1)
+        NotificationCompat.Builder mnb = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.s1)\\setting image to notification
                 .setContentTitle("NOTIFICATION")
                 .setContentText("YOU HAVE SELECTED SUGARCANE")
                 .setSound(alarmSound)
